@@ -12,4 +12,5 @@ Aqui você encontrará as resoluções dos exercícios sobre o Tema. Segue rela�
 Exercícios bonús:
 - [X] Exercício Bonús 1: Imprimir lista;
 - [X] Exercício Bonús 2: Limitar quantidade de iteração;
-[aqui](https://github.com/renatomak/trybe-exercises/tree/exercises/4.2/01_introducao/bloco_4_introducao_js/dia_2).
+
+Acesse os códigos [aqui](https://github.com/renatomak/trybe-exercises/tree/master/bloco_1/dia_5_shell_script).
