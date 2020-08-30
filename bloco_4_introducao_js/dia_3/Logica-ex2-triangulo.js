@@ -15,3 +15,15 @@ while(contador){
     console.log(linha);
     contador-=1;
 }
+
+/**for(let i = 0; i < valor; i+=1){
+    let linha = "";
+    for(let j = 0; j < valor; j+=1){
+        if( i > j || i === j){
+            linha += "*";
+        }else{
+            linha += " ";
+        }
+    }
+    console.log(linha);
+} */
