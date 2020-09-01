@@ -10,10 +10,10 @@ function posicaoMaior(array){
 
     for(let i = 1; i < valores.length; i++){
     
-        if(valores[i-1] <= valores[i]) maior = i;
+        if(valores[maior] <= valores[i]) maior = i;
     }
     
     return maior;
 }
 
-console.log(posicaoMaior(valores));
+console.log("A posição do maior valor é " + posicaoMaior(valores));
