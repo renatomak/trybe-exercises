@@ -1,4 +1,4 @@
-let base = 7;
+let base = 15;
 let altura = Math.ceil(base / 2) - 1;
 
 for (let i = 0; i < altura+1; i+=1) {
