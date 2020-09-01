@@ -29,4 +29,5 @@ let info = {
         }
   }
 
-  imprimeChaveObjeto(info, info2);
+  console.table(info)
+ // imprimeChaveObjeto(info, info2);
