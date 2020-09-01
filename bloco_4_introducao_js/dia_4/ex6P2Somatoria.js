@@ -11,4 +11,4 @@ function somatorio(num){
     return soma;
 }
 
-console.log(somatorio(5));
+console.log(somatorio(6));
