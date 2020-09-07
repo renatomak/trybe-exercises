@@ -81,6 +81,14 @@
         alteraTexto();
 
         /*Crie uma função que exiba o conteúdo de todas as tags <p> no console. */
+        function mostraP(){
+            let tags = document.getElementsByTagName("p");
+            for(let tag of tags){
+                console.log(tag.innerText);
+            }
+        }
+        mostraP();
+
     </script>
 </body>
 
