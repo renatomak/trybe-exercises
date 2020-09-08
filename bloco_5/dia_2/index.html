@@ -131,6 +131,23 @@
 
     elemPai.appendChild(newElement);
 
+    //8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+    elemPai = document.querySelector('.right-content');
+
+    newElement = document.createElement('ul');
+
+    numeroExtenso = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+
+    for(let i = 0; i < 10; i += 1){
+        let newLi = document.createElement('li');
+
+        newLi.innerText = numeroExtenso[i];
+
+        newElement.appendChild(newLi);
+    }
+
+    elemPai.appendChild(newElement);
+
 </script>
 
 </html>
