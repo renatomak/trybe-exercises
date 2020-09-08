@@ -63,7 +63,7 @@
 
       <script>
           // 1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
-        let corpo = document.body;
+        let elemPai = document.body;
 
         let newElement = document.createElement('h1');
         
@@ -71,15 +71,25 @@
 
         console.log(newElement);
         
-        corpo.appendChild(newElement);
+        elemPai.appendChild(newElement);
 
         //2 - Adicione a tag div com a classe main-content como filho da tag body;
         
         newElement = document.createElement('div');
 
+        newElement.className = 'main-content';
+
+        elemPai.appendChild(newElement);
+
+        //Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+
+        elemPai = document.querySelector('.main-content');
+
+        newElement = document.createElement('div');
+
         newElement.className = 'center-content';
 
-        corpo.appendChild(newElement);
+        elemPai.appendChild(newElement);
 
     </script>
 </html>
