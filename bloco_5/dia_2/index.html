@@ -138,7 +138,7 @@
 
     numeroExtenso = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
 
-    for(let i = 0; i < 10; i += 1){
+    for (let i = 0; i < 10; i += 1) {
         let newLi = document.createElement('li');
 
         newLi.innerText = numeroExtenso[i];
@@ -148,6 +148,14 @@
 
     elemPai.appendChild(newElement);
 
+    //9 - Adicione 3 tags h3, todas sendo filhas do div criado no passo 2.
+    elemPai = document.querySelector('.main-content');
+
+    for (let i = 0; i < 3; i += 1) {
+        newElement = document.createElement('h3');
+
+        elemPai.appendChild(newElement);
+    }
 </script>
 
 </html>
