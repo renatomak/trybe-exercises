@@ -156,6 +156,18 @@
 
         elemPai.appendChild(newElement);
     }
+
+    //10 - Adicione a classe title na tag h1 criada;
+    newElement = document.querySelector('h1');
+
+    newElement.className = 'title';
+
+    // 11 - Adicione a classe description nas 3 tags h3 criadas;
+    newElement = document.querySelectorAll('h3');
+    for(const ele of newElement){
+        ele.className = 'description';
+    }
+
 </script>
 
 </html>
