@@ -1,115 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Exercício 5.2</title>
     <style>
-      div {
-        border-color: black;
-        border-style: solid;
-      }
+        div {
+            border-color: black;
+            border-style: solid;
+        }
 
-      .title {
-        text-align: center;
-      }
+        .title {
+            text-align: center;
+        }
 
-      .main-content {
-        background-color: yellow;
-      }
+        .main-content {
+            background-color: yellow;
+        }
 
-      .main-content .center-content {
-        background-color: red;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-      }
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-      .main-content .center-content p {
-        font-style: italic;
-      }
+        .main-content .center-content p {
+            font-style: italic;
+        }
 
-      .main-content .left-content {
-        background-color: green;
-        width: 60%;
-        margin-left: 0;
-        margin-right: auto;
-      }
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
 
-      .main-content .left-content .small-image {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 100%;
-      }
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
 
-      .main-content .right-content {
-        background-color: blue;
-        width: 60%;
-        margin-left: auto;
-        margin-right: 0;
-      }
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
 
-      .main-content .description {
-        text-align: center;
-      }
+        .main-content .description {
+            text-align: center;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
 
 
 
-  </body>
+</body>
 
-      <script>
-          // 1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
-        let elemPai = document.body;
+<script>
+    // 1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
+    let elemPai = document.body;
 
-        let newElement = document.createElement('h1');
-        
-        newElement.innerText = 'Exercício 5.2 - JavaScript DOM';
+    let newElement = document.createElement('h1');
 
-        console.log(newElement);
-        
-        elemPai.appendChild(newElement);
+    newElement.innerText = 'Exercício 5.2 - JavaScript DOM';
 
-        //2 - Adicione a tag div com a classe main-content como filho da tag body;
-        
-        newElement = document.createElement('div');
+    console.log(newElement);
 
-        newElement.className = 'main-content';
+    elemPai.appendChild(newElement);
 
-        elemPai.appendChild(newElement);
+    //2 - Adicione a tag div com a classe main-content como filho da tag body;
 
-        // 3 - Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+    newElement = document.createElement('div');
 
-        elemPai = document.querySelector('.main-content');
+    newElement.className = 'main-content';
 
-        newElement = document.createElement('div');
+    elemPai.appendChild(newElement);
 
-        newElement.className = 'center-content';
+    // 3 - Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
 
-        elemPai.appendChild(newElement);
+    elemPai = document.querySelector('.main-content');
 
-        // 4 - Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+    newElement = document.createElement('div');
 
-        elemPai = document.querySelector('.center-content');
+    newElement.className = 'center-content';
 
-        newElement = document.createElement('p');
+    elemPai.appendChild(newElement);
 
-        newElement.innerText = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nulla adipisci perferendis, ducimus et minima ea facilis, aperiam sint necessitatibus, expedita veritatis aliquam. Error aliquid beatae reiciendis numquam? Sit, dolorum?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nulla adipisci perferendis, ducimus et minima ea facilis, aperiam sint necessitatibus, expedita veritatis aliquam. Error aliquid beatae reiciendis numquam? Sit, dolorum?'
+    // 4 - Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
 
-        elemPai.appendChild(newElement);
+    elemPai = document.querySelector('.center-content');
 
-        //5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+    newElement = document.createElement('p');
 
-        elemPai = document.querySelector('.main-content');
+    newElement.innerText =
+        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nulla adipisci perferendis, ducimus et minima ea facilis, aperiam sint necessitatibus, expedita veritatis aliquam. Error aliquid beatae reiciendis numquam? Sit, dolorum?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nulla adipisci perferendis, ducimus et minima ea facilis, aperiam sint necessitatibus, expedita veritatis aliquam. Error aliquid beatae reiciendis numquam? Sit, dolorum?'
 
-        newElement = document.createElement('div');
+    elemPai.appendChild(newElement);
 
-        newElement.className = 'left-content';
+    //5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
 
-        elemPai.appendChild(newElement);
+    elemPai = document.querySelector('.main-content');
 
-    </script>
+    newElement = document.createElement('div');
+
+    newElement.className = 'left-content';
+
+    elemPai.appendChild(newElement);
+
+    //6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+
+    newElement = document.createElement('div');
+
+    newElement.className = 'right-content';
+
+    elemPai.appendChild(newElement);
+</script>
+
 </html>
