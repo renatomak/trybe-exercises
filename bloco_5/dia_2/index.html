@@ -168,11 +168,16 @@
         ele.className = 'description';
     }
 
-    // 3 - Remova o div criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
+    // 12 - Remova o div criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
     
     elemPai = document.querySelector('.main-content');
     let element = elemPai.firstElementChild.nextElementSibling;
     elemPai.removeChild(element);
+
+    //  13 -  Centralize o div criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto do div;
+
+    element = document.querySelector('.right-content');
+    element.style.marginRight = 'auto';
 </script>
 
 </html>
