@@ -1,9 +1,9 @@
-const valor = 5;
+const tamanhoBase = 5;
 
-for(let i = 0; i < valor; i+=1){
+for(let i = 0; i < tamanhoBase; i+=1){
     let linha = "";
-    for(let j = 0 ; j < valor; j+=1){
-        if((i + j) < (valor-1)){
+    for(let j = 0 ; j < tamanhoBase; j+=1){
+        if((i + j) < (tamanhoBase-1)){
             linha += "   ";
         }else{
             linha += " * ";
