@@ -6,13 +6,13 @@ let contador = valor;
 
 
 while(contador){
-    let linha = "";
+    let linhaSaida = "";
 
-    for(let i = 0; i < valor - (contador - 1); i+=1){
-        linha += "*";
+    for(let index = 0; index < valor - (contador - 1); index += 1){
+        linhaSaida += "*";
     }
 
-    console.log(linha);
+    console.log(linhaSaida);
     contador-=1;
 }
 

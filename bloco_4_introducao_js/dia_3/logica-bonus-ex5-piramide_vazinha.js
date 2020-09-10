@@ -1,12 +1,12 @@
-let base = 15;
-let altura = Math.ceil(base / 2) - 1;
+let basePiramide = 15;
+let altura = Math.ceil(basePiramide / 2) - 1;
 
-for (let i = 0; i < altura+1; i+=1) {
+for (let index = 0; index < altura+1; index+=1) {
     let linha = "";
 
-    for (let j = 0; j < base; j+=1) {
+    for (let posicao = 0; posicao < basePiramide; posicao+=1) {
 
-        if ((altura - i) === j || (altura + i) === j || i === altura) {
+        if ((altura - index) === posicao || (altura + index) === posicao || index === altura) {
             linha += "*";
         } else {
             linha += " ";
