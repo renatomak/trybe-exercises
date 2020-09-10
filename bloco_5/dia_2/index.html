@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+        div {
+            border-color: black;
+            border-style: solid;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: yellow;
+        }
+
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content .center-content p {
+            font-style: italic;
+        }
+
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
+
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-content .description {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+</body>
+
+<script>
+    // 1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
+    let elemPai = document.body;
+
+    let newElement = document.createElement('h1');
+
+    newElement.innerText = 'Exercício 5.2 - JavaScript DOM';
+
+    console.log(newElement);
+
+    elemPai.appendChild(newElement);
+
+    //2 - Adicione a tag div com a classe main-content como filho da tag body;
+
+    newElement = document.createElement('div');
+
+    newElement.className = 'main-content';
+
+    elemPai.appendChild(newElement);
+
+    // 3 - Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+
+    elemPai = document.querySelector('.main-content');
+
+    newElement = document.createElement('div');
+
+    newElement.className = 'center-content';
+
+    elemPai.appendChild(newElement);
+
+    // 4 - Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+
+    elemPai = document.querySelector('.center-content');
+
+    newElement = document.createElement('p');
+
+    newElement.innerText =
+        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nulla adipisci perferendis, ducimus et minima ea facilis, aperiam sint necessitatibus, expedita veritatis aliquam. Error aliquid beatae reiciendis numquam? Sit, dolorum?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nulla adipisci perferendis, ducimus et minima ea facilis, aperiam sint necessitatibus, expedita veritatis aliquam. Error aliquid beatae reiciendis numquam? Sit, dolorum?'
+
+    elemPai.appendChild(newElement);
+
+    //5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+
+    elemPai = document.querySelector('.main-content');
+
+    newElement = document.createElement('div');
+
+    newElement.className = 'left-content';
+
+    elemPai.appendChild(newElement);
+
+    //6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+
+    newElement = document.createElement('div');
+
+    newElement.className = 'right-content';
+
+    elemPai.appendChild(newElement);
+
+    //7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do div criado no passo 5;
+    elemPai = document.querySelector('.left-content');
+
+    newElement = document.createElement('img');
+
+    newElement.src = 'https://picsum.photos/200';
+
+    elemPai.appendChild(newElement);
+
+    //8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+    elemPai = document.querySelector('.right-content');
+
+    newElement = document.createElement('ul');
+
+    numeroExtenso = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+
+    for (let i = 0; i < 10; i += 1) {
+        let newLi = document.createElement('li');
+
+        newLi.innerText = numeroExtenso[i];
+
+        newElement.appendChild(newLi);
+    }
+
+    elemPai.appendChild(newElement);
+
+    //9 - Adicione 3 tags h3, todas sendo filhas do div criado no passo 2.
+    elemPai = document.querySelector('.main-content');
+
+    for (let i = 0; i < 3; i += 1) {
+        newElement = document.createElement('h3');
+
+        elemPai.appendChild(newElement);
+    }
+
+    //10 - Adicione a classe title na tag h1 criada;
+    newElement = document.querySelector('h1');
+
+    newElement.className = 'title';
+
+    // 11 - Adicione a classe description nas 3 tags h3 criadas;
+    newElement = document.querySelectorAll('h3');
+    for(const ele of newElement){
+        ele.className = 'description';
+    }
+
+    // 12 - Remova o div criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
+    
+    elemPai = document.querySelector('.main-content');
+    let element = elemPai.firstElementChild.nextElementSibling;
+    elemPai.removeChild(element);
+
+    //  13 -  Centralize o div criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto do div;
+
+    element = document.querySelector('.right-content');
+    element.style.marginRight = 'auto';
+
+    // 14 - Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
+
+    element = document.querySelector('.center-content');
+    element.style.backgroundColor = "green";
+
+    // 15 Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
+
+    let elemenents = document.querySelectorAll('li');
+
+    elemPai = document.querySelector('ul');
+
+    elemPai.removeChild(elemenents[8]);
+    elemPai.removeChild(elemenents[9]);
+
+</script>
+
+</html>
