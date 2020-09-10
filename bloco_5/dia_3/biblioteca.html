@@ -1,0 +1,45 @@
+<! DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title> </title>
+    </head>
+
+    <body>
+
+        <h1> Mad Libs </h1>
+
+        <ul>
+            <li> Substantivo: <input type="text" id="noun"></li>
+            <li> Adjetivo: <input type="text" id="adjective"></li>
+            <li> Nome de alguém: <input type="text" id="person"></li>
+        </ul>
+
+        <button id="lib-button"> Libere! </button>
+
+        <div id="story"> </div>
+
+    </body>
+    <script>
+        const sub = document.getElementById('noun');
+        const adj = document.getElementById('adjective');
+        const nome = document.getElementById('person');
+        const botao = document.getElementById('lib-button');
+        const story = document.getElementById('story');
+        let historia = "";
+
+        botao.addEventListener('click', function () {
+            sub.value = "";
+            adj.value = '';
+            nome.value = '';
+        });
+        
+        botao.addEventListener('mouseover', function(){
+            let historia = nome.value + " claramente é " + sub.value + " e " +adj.value;
+            story.innerText = historia;
+        })
+
+    </script>
+
+    </html>
