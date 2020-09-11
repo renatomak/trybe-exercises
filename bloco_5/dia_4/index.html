@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de Conteúdo - dia 5.4</title>
+</head>
+<style>
+    .corpo {
+        width: 900px;
+        background-color: #606060;
+        padding: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+
+    }
+    .menu-formatacao{
+        background-color: antiquewhite;
+    }
+
+    .menu-formatacao input {
+        padding: 5px;
+        margin: 5px;
+    }
+    .corpo-texto{
+        color: antiquewhite;
+    }
+</style>
+
+<body>
+    <div class="corpo">
+
+        <section class="menu-formatacao">
+            <label for="">Cor do plano de fundo: 
+                <input type="text" id="cor-fundo" /></label>
+            <label for="">Cor do texto: 
+                <input type="text" id="cor-texto" /></label>
+            <br>
+            <label for="">Tamanho da fonte: 
+                <input type="text" id="tamanho-fonte" /></label>
+            <label for="">Espaço entre linhas 
+                <input type="text" id="espaco-linhas" /></label>
+            <br>
+            <label for="">Tipo de fonte: 
+                <input type="text" id="tipo-fonte" /></label>
+            <input type="button" value="Aplicar" id="botao">
+
+        </section>
+
+        <section class="corpo-texto">
+
+            <header>
+                <h1 class="texto">Lorem Ipsum</h1>
+                <h5 class="texto">
+                    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it
+                    is
+                    pain..."
+                </h5>
+            </header>
+
+            <article class="texto">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper quis massa et rhoncus. Donec
+                    est
+                    sem,
+                    pulvinar at sodales ut, consectetur quis felis. Suspendisse eu turpis diam. Aenean quam leo,
+                    molestie
+                    nec
+                    nunc
+                    nec, rutrum elementum magna. Duis eleifend mollis nisl, et luctus nisl aliquet dignissim. Sed
+                    consequat,
+                    purus
+                    eu tincidunt commodo, velit lacus interdum turpis, at porttitor velit lectus sit amet diam. Sed
+                    vitae
+                    est
+                    commodo, luctus lorem quis, bibendum diam. Sed varius metus justo, sed suscipit sapien consectetur
+                    non.
+                    Curabitur elementum rutrum sapien. Donec orci tellus, convallis eu libero ut, auctor facilisis
+                    purus.
+                    Curabitur
+                    ornare vehicula sapien ut eleifend. Praesent vulputate, libero sit amet blandit sollicitudin, magna
+                    justo
+                    cursus
+                    purus, at finibus nulla elit id tortor.
+                </p>
+
+                <p>
+                    Nunc tempus, enim eget fermentum eleifend, velit ipsum molestie erat, eu aliquet neque dui sit amet
+                    erat.
+                    Vestibulum hendrerit pulvinar magna nec pellentesque. Donec imperdiet rhoncus metus ac venenatis.
+                    Donec
+                    interdum
+                    imperdiet sapien, vitae sollicitudin diam consequat hendrerit. Suspendisse potenti. Aliquam semper,
+                    neque eu
+                    facilisis tempus, ante dolor cursus ante, quis molestie nisl ex porttitor lectus. Suspendisse vitae
+                    felis
+                    neque.
+                </p>
+
+                <p>
+                    Suspendisse at egestas neque, et elementum tellus. Sed sit amet tortor tincidunt, posuere purus id,
+                    blandit
+                    purus. Vivamus dui metus, tempor nec magna id, tincidunt feugiat elit. Nam mattis tempus faucibus.
+                    Quisque
+                    ullamcorper orci ac suscipit placerat. Nullam et arcu velit. Mauris est leo, efficitur sit amet ex
+                    eget,
+                    ornare
+                    eleifend ipsum. Aliquam vitae dictum lacus. Suspendisse et viverra magna. Suspendisse tincidunt
+                    pellentesque
+                    elit, ut venenatis lacus tempus sed. Vivamus sed turpis ipsum. Etiam pulvinar nec ipsum eget
+                    vehicula.
+                    Quisque
+                    dapibus, dolor vel mattis blandit, augue justo dictum mauris, ac luctus lorem urna eu arcu.
+                </p>
+
+                <p>
+                    Fusce et convallis turpis. Aliquam congue massa ut lorem fermentum consectetur. Aliquam porta arcu
+                    id
+                    est
+                    scelerisque pretium. Phasellus et libero vitae ipsum fermentum lacinia. Cras vitae massa a nisl
+                    mattis
+                    sodales
+                    ut id justo. Sed eget ullamcorper tellus. In pulvinar risus ex, at consequat lacus iaculis et.
+                    Aliquam
+                    erat
+                    volutpat. Duis vitae fermentum enim, sit amet volutpat dolor. Morbi in purus pulvinar, tempus neque
+                    eu,
+                    dictum
+                    ipsum. Ut sagittis, ante a porta faucibus, tortor ligula cursus odio, at porta tortor odio id arcu.
+                    Mauris
+                    pellentesque, nulla at iaculis iaculis, metus massa scelerisque velit, efficitur accumsan arcu sem
+                    nec
+                    ante.
+                    In
+                    hac habitasse platea dictumst.
+                </p>
+
+                <p>
+
+                </p>
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut feugiat
+                sollicitudin velit at maximus. Morbi mollis ante at eros laoreet interdum eu eget nunc. Sed fringilla
+                ipsum mauris. Vestibulum imperdiet mauris non laoreet vehicula. Duis sit amet placerat mi, vitae cursus
+                diam. Pellentesque lobortis sit amet leo et condimentum. Vivamus ante ante, porta nec leo in, feugiat
+                tincidunt magna. Proin vel ante lacus. Integer in dui in tortor facilisis sollicitudin. Donec interdum
+                dictum pretium. Nam a libero eu massa accumsan dictum ut nec nulla. Pellentesque commodo libero sed
+                ligula fermentum viverra. Aenean vel blandit quam, eu convallis elit. Sed lobortis metus in odio semper
+                convallis. Nulla eget lectus rhoncus nibh vehicula vehicula.
+                <p>
+                    Generated 5 paragraphs, 496 words, 3347 bytes of Lorem Ipsum
+                </p>
+
+            </article>
+        </section>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
