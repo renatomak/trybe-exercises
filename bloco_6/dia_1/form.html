@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco 6, dia 1 - Formulário</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+    
+<form action="" method="GET">
+    <fieldset id="dadosPessoais">
+        <label for="nome">Nome: <input type="text" name="nome" id="nome" required maxlength="40" placeholder="Digite aqui seu nome"></label>
+        
+        <label for="email">E-mail: <input type="email" name="email" id="email" required placeholder="Digite aqui seu e-mail" maxlength="50"></label>
+        
+        <label for="cpf">CPF: <input type="text" name="cpf" id="cpf" required maxlength="11" placeholder="Digit o CPF"></label>
+        
+        <label for="endereco">Endereco: <input type="text" name="endereco" id="endereco" required maxlength="200" placeholder="Digite aqui seu endereço"></label>
+        
+        <label for="cidade">Cidade: <input type="text" name="cidade" id="cidade" required maxlength="28" placeholder="Digite aqui sua Cidade"></label>
+
+        <label for="estado">Estado: <select name="estado" id="estado">
+            <option value=""></option>
+        </select></label>
+        
+        <label for="tipoGroup">Tipo: 
+            <input type="radio" id="casa" value="Casa" name="tipoGroup" />
+            <input type="radio" id="apartamento" value="Apartamento" name="tipoGroup" />
+        </label>
+    </fieldset>
+
+    <fieldset id="emprego" class="emprego">
+        <label for="curriculo">Resumo do currículo: <textarea name="curriculo" id="curriculo" class="curriculo" cols="30" rows="10" maxlength="1000"></textarea> </label>
+
+        <label for="cargo">Cargo: <input type="text" name="cargo" id="cargo"  class="cargo"  maxlength="40"> </label>
+
+        <label for="descricaoCargo">Cargo: <input type="text" name="descricaoCargo" id="descricaoCargo"  maxlength="500"> </label>
+
+        <label for="data">Cargo: <input type="date" name="data" id="data"  maxlength="500"> </label>
+
+    </fieldset>
+   
+    <label for="enviar"><input type="submit" value="enviar" name="enviar" id="enviar"></label>
+</form>
+
+</body>
+
+<script src="./script.js"></script>
+</html>
