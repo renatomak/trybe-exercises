@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando Formulários</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    h1{
+        text-align: center;
+        background-color: rgb(246, 247, 248);
+        border: 1px solid rgb(214, 217, 220);
+        border-radius: 3px;
+        
+    }
+    form *{
+        background-color: rgb(246, 247, 248);
+        display: block;
+        margin: 10px;
+    }
+</style>
+<body>
+    <h1>Meu Formulário</h1>
+    <p>Este é um formulário de exemplo</p>
+    <form action="" method="get">
+        <label for="nome">Nome <input type="text" id="nome" placeholder="Digite seu nome"></label>
+        <label for="email">E-mail <input type="email" name="email" id="email" placeholder="Digite seu e-mail"> </label>
+        <label for="cidade">
+            <select name="cidade" id="cidade">
+                <option value="goiania">Goiânia</option>
+                <option value="goianira">Goinira</option>
+                <option value="Trindade">Trindade</option>
+                <option value="Itaberai">Itaberai</option>
+                <option value="Jatai">Jatai</option>
+                <option value="Anapolis">Anapolis</option>
+            </select>
+        </label>
+        <label for="foto"> <input type="file" id="foto"> </label>
+
+        <label for="">Selecione seu sexo</label>
+
+        <label for="sexoGroupo">
+            <input type="radio" id="masculino" value="masculino" name="sexoGroup" />
+            <input type="radio" id="masculino" value="feminino" name="sexoGroup" />
+        </label>
+        <label for="">
+            <textarea nome="descricao">
+                Digite sue Biografia
+            </textarea>
+        </label>
+        <label for="senha">Senha <input type="password" name="senha" id="senha" placeholder="Digite seua senha"> </label>
+        <label for="noticias"> <input type="checkbox" name="noticias" id="noticias"> Deseja receber e-mails promocionais e noticias </label>
+        <label for="enviar"><input type="submit" value="enviar" id="enviar"></label>
+    </form>
+
+</body>
+
+</html>
