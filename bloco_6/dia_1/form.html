@@ -1,50 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloco 6, dia 1 - Formulário</title>
+    <link rel="stylesheet" href="./css/bulma-rtl.min.css">
 </head>
-<link rel="stylesheet" href="./style.css">
+
 <body>
-    
-<form action="" method="GET">
-    <fieldset id="dadosPessoais">
-        <label for="nome">Nome: <input type="text" name="nome" id="nome" required maxlength="40" placeholder="Digite aqui seu nome"></label>
-        
-        <label for="email">E-mail: <input type="email" name="email" id="email" required placeholder="Digite aqui seu e-mail" maxlength="50"></label>
-        
-        <label for="cpf">CPF: <input type="text" name="cpf" id="cpf" required maxlength="11" placeholder="Digit o CPF"></label>
-        
-        <label for="endereco">Endereco: <input type="text" name="endereco" id="endereco" required maxlength="200" placeholder="Digite aqui seu endereço"></label>
-        
-        <label for="cidade">Cidade: <input type="text" name="cidade" id="cidade" required maxlength="28" placeholder="Digite aqui sua Cidade"></label>
+    <section class="section">
+        <header>
+            <h1 class="title">
+                Exercício do bloco 6 dia 1
+            </h1>
+        </header>
+    </section>
 
-        <label for="estado">Estado: <select name="estado" id="estado">
-            <option value=""></option>
-        </select></label>
-        
-        <label for="tipoGroup">Tipo: 
-            <input type="radio" id="casa" value="Casa" name="tipoGroup" />
-            <input type="radio" id="apartamento" value="Apartamento" name="tipoGroup" />
-        </label>
-    </fieldset>
+    <section class="section">
 
-    <fieldset id="emprego" class="emprego">
-        <label for="curriculo">Resumo do currículo: <textarea name="curriculo" id="curriculo" class="curriculo" cols="30" rows="10" maxlength="1000"></textarea> </label>
 
-        <label for="cargo">Cargo: <input type="text" name="cargo" id="cargo"  class="cargo"  maxlength="40"> </label>
+        <form action="" method="GET">
 
-        <label for="descricaoCargo">Cargo: <input type="text" name="descricaoCargo" id="descricaoCargo"  maxlength="500"> </label>
+            <fieldset id="dadosPessoais">
 
-        <label for="data">Cargo: <input type="date" name="data" id="data"  maxlength="500"> </label>
+                <div class="field">
+                    <label for="nome" class="label">Nome:</label>
+                    <div class="control">
+                        <input type="text" name="nome" id="nome" required maxlength="40"
+                            placeholder="Digite aqui seu nome" class="input" />
+                    </div>
+                </div>
 
-    </fieldset>
-   
-    <label for="enviar"><input type="submit" value="enviar" name="enviar" id="enviar"></label>
-</form>
+                <div class="field">
+                    <label for="email" class="label">E-mail:</label>
+                    <div class="control">
+                        <input type="email" name="email" id="email" required placeholder="Digite aqui seu e-mail"
+                            maxlength="50" class="input" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="cpf" class="label">CPF: </label>
+                    <div class="control">
+                        <input type="text" name="cpf" id="cpf" required maxlength="11" placeholder="Digit o CPF"
+                            class="input" />
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label for="endereco" class="label">Endereco: </label>
+                    <div class="control">
+                        <input type="text" name="endereco" id="endereco" required maxlength="200"
+                            placeholder="Digite aqui seu endereço" class="input" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="cidade" class="label">Cidade: </label>
+                    <div class="control">
+                        <input type="text" name="cidade" id="cidade" required maxlength="28"
+                            placeholder="Digite aqui sua Cidade" class="input" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="estado" class="label">Estado: </label>
+                    <div class="control select">
+                        <select name="estado" id="estado">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="tipoGroup" class="label" class="radio">Tipo:</label>
+                    <div class="control">
+                        <input type="radio" id="casa" value="Casa" name="tipoGroup" class="radio"/>
+                        <input type="radio" id="apartamento" value="Apartamento" name="tipoGroup" class="radio"/>
+                    </div>
+                </div>
+
+                
+                
+
+            </fieldset>
+
+            <fieldset id="emprego" class="emprego">
+                <label for="curriculo">Resumo do currículo: <textarea name="curriculo" id="curriculo" class="curriculo"
+                        cols="30" rows="10" maxlength="1000"></textarea> </label>
+
+                <label for="cargo" class="label">Cargo: <input type="text" name="cargo" id="cargo" class="cargo"
+                        maxlength="40"> </label>
+
+                <label for="descricaoCargo" class="label">Cargo: <input type="text" name="descricaoCargo"
+                        id="descricaoCargo" maxlength="500"> </label>
+
+                <label for="data" class="label">Cargo: <input type="date" name="data" id="data" maxlength="500">
+                </label>
+
+            </fieldset>
+
+            <label for="enviar" class="label"><input type="submit" value="enviar" name="enviar" id="enviar"></label>
+        </form>
+    </section>
 
 </body>
 
 <script src="./script.js"></script>
+
 </html>

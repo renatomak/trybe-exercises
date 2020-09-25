@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco 6, dia 1 - Formulário</title>
+    <link rel="stylesheet" href="./css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/pikaday.css">
+</head>
+
+<body>
+    <div class="principal">
+
+        <section class="section">
+            <header>
+                <h1 class="title">
+                    Exercício do bloco 6 dia 2
+                </h1>
+            </header>
+        </section>
+
+        <section class="section">
+            <form action="" method="GET">
+                <fieldset id="dadosPessoais">
+                    <div class="field">
+                        <label for="nome" class="label">Nome:</label>
+                        <div class="control">
+                            <input type="text" name="nome" id="nome" required maxlength="40"
+                                placeholder="Digite aqui seu nome" class="input" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email" class="label">E-mail:</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-medium" type="email" placeholder="Email">
+                            <span class="icon is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="cpf" class="label">CPF: </label>
+                        <div class="control">
+                            <input type="text" name="cpf" id="cpf" required maxlength="11" placeholder="Digit o CPF"
+                                class="input" />
+                        </div>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="endereco" class="label">Endereco: </label>
+                        <div class="control">
+                            <input type="text" name="endereco" id="endereco" required maxlength="200"
+                                placeholder="Digite aqui seu endereço" class="input" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="cidade" class="label">Cidade: </label>
+                        <div class="control">
+                            <input type="text" name="cidade" id="cidade" required maxlength="28"
+                                placeholder="Digite aqui sua Cidade" class="input" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="estado" class="label">Estado: </label>
+                        <div class="control select">
+                            <select name="estado" id="estado">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="tipoGroup" class="label radio">Tipo:
+                            <div class="control">
+                                <label for="tipoGroup" class="radio">
+                                    <input type="radio" id="casa" value="Casa" name="tipoGroup" class="radio"/>Casa
+                                </label>
+                                <label for="tipoGroup" class="radio">
+                                    <input type="radio" id="apartamento" value="Apartamento"
+                                        name="tipoGroup" class="radio"/>Apartamento
+                                </label>
+                            </div>
+                    </div>
+                </fieldset>
+
+                <fieldset id="emprego" class="emprego">
+                    <div class="field">
+                        <label for="curriculo" class="label">Resumo do currículo: </label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Dados principais de seu curriculo" cols="30"
+                                rows="10" maxlength="1000"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="cargo" class="label">Cargo: </label>
+                        <div class="control">
+                            <input type="text" name="cargo" id="cargo" class="input" maxlength="40">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="descricaoCargo" class="label">Descrição do Cargo: </label>
+                        <div class="control">
+                            <input type="text" name="descricaoCargo" id="descricaoCargo" maxlength="500" class="input">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="datepicker" class="label">Date de Nascimento:</label>
+                        <div class="control">
+                        <input type="text" id="datepicker" class="data">
+                        <div id="selected"></div>
+                    </div>
+
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <div class="buttons">
+                        <input type="submit" value="enviar" name="enviar" id="enviar" class="button is-success">
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </div>
+
+</body>
+
+<script src="./js/script.js"></script>
+<script src="./js/pikaday.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.28.5/date_fns.min.js"></script>
+
+<script>
+    // You can get and set dates with custom formatter (and thus also date-fns)
+    new Pikaday({
+        field: document.getElementById('datepicker'),
+        toString: function (date, format) {
+
+            let ndata = dateFns.format(date, format).split('-');
+            ndata = ndata.reverse();
+            ndata = ndata.join(',').replace(/,/g, '/');
+            console.log(dateFns.format(date, format).split('-').reverse().join(',').replace(/,/g, '/'));
+            return dateFns.format(date, format).split('-').reverse().join(',').replace(/,/g, '/');
+        },
+        parse: function (dateString, format) {
+            return dateFns.parse(dateString);
+        },
+
+    });
+</script>
+
+</html>
