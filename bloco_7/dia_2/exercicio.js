@@ -52,12 +52,30 @@ function totalAlunos(objs){
   return total;
 }
 
+function getValueByNumber(obj, posicao){
+  const chaves = Object.keys(obj);
+      
+  return `Output: ${obj[chaves[posicao]]}`;
+}
+
+function cheksPars(objeto, keyName, value){
+  let keyValue = Object.entries(objeto);
+
+  for(let i = 0; i < Object.keys(objeto).length; i += 1){
+    if(keyName === keyValue[i][0] && value === keyValue[i][1]){
+      return true;
+    }
+  }
+  return false;
+}
+
 //console.log(lesson2);
 //console.log(lesson3.length)
 //showKeys(lesson3);
 //console.log('Tamanho = ' + sizeObject(lesson1));
 //listValuesObject(lesson1);
 //console.log(allLessons)
+//console.log(totalAlunos(allLessons));
+//console.log(getValueByNumber(lesson1, 0));
 
-console.log(totalAlunos(allLessons));
-
+console.log(cheksPars(lesson3, 'turno', 'noite'));
