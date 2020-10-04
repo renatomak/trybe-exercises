@@ -1,0 +1,49 @@
+<! DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset=utf-8 />
+    <title> Calculadora </title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <div class="calc">
+
+      <div class="block">
+        <label> Quadrar este número:</label>
+        <input type="number" id="square-input" size="2">
+        <button id="square-button" class="button"> Calcular </button>
+      </div>
+      <div class="block">
+        <label> Metade deste número:</label>
+          <input type="number" id="half-input" size="2">        
+        <button id="half-button" class="button"> Calcular </button>
+      </div>
+      <div class="block">
+        <label>Fração:</label>
+          <input type="number" id="percent1-input" size="2">
+        
+        <label>Todo:</label>
+          <input type="number" id="percent2-input" size="2">
+        
+        <button id="percent-button" class="button"> Calcular </button>
+      </div>
+      <div class="block">
+        <label> Calcule a área do círculo com o raio:
+          <input type="number" id="area-input" size="2">
+        </label>
+        <button id="area-button" class="button"> Calcular </button>
+        <div id="solution">
+        </div>
+      </div>
+
+    </div>
+
+
+  </body>
+  <script src="./script/calculadora.js">
+
+  </script>
+
+  </html>

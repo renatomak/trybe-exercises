@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.calc {
+    width: 45%;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+.block {    
+    display: flex;
+    flex-direction: column;
+}
+
+.block * {
+    margin: 5px;
+    line-height: 30px;
+}
+
+.button {
+    width: 100px;
+}
+
+
+#percent1-input, #percent2-input {
+    width: calc(45%/2 - 40px);
+}
+.left {
+    height: 45%;
+}
