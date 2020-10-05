@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Walk</title>
+</head>
+<style>
+    #imagem {
+        margin-left: 0px;
+    }
+</style>
+
+<body>
+    <img style="position:absolute; margin-left: 0px;" src="http://www.anniemation.com/clip_art/images/cat-walk.gif"
+        id="imagem">
+
+</body>
+<script>
+    const imagem = document.getElementById('imagem');
+
+    let tempo = setInterval(catWalk, 50);
+    let ladoAndar = true;
+    function catWalk() {
+        
+
+        if (ladoAndar) {
+            let margem = 10 + parseInt(imagem.style.marginLeft);
+            if (margem < 1245) {
+                imagem.style.marginLeft = margem + 'px';
+            } else {
+                ladoAndar = false;
+            }
+        } else {
+            let margem = -10 + parseInt(imagem.style.marginLeft);
+            if (margem > -1) {
+                imagem.style.marginLeft = margem + 'px';
+            } else {
+                ladoAndar = true;
+            }
+        }
+
+    }
+</script>
+
+</html>
