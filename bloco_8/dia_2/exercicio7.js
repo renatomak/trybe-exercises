@@ -1,7 +1,6 @@
 const assert = require('assert');
 
-const books = [
-  {
+const books = [{
     id: 1,
     name: 'As Crônicas de Gelo e Fogo',
     genre: 'Fantasia',
@@ -70,8 +69,8 @@ function authorWith3DotsOnName() {
   books.forEach((item) => {
     let nome = item.author.name;
     nome = nome.replace(/ /g, '');
-    if ((nome[4] === nome[4].toUpperCase()) && nome[5] === '.'){
-        autor = item.name;
+    if ((nome[4] === nome[4].toUpperCase()) && nome[5] === '.') {
+      autor = item.name;
     }
   })
   return autor;
