@@ -66,7 +66,7 @@ const books = [
 const expected_result = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
-    let autor;
+  let autor;
   books.forEach((item) => {
     let nome = item.author.name;
     nome = nome.replace(/ /g, '');
