@@ -1,13 +1,20 @@
-function addOne(array){
-    let newArray = array;
+const assert = require('assert');
 
-    newArray.forEach((element, key, arr) => {
-        arr[key] += 1;
+function addOne(array){
+    let newArray = [];
+
+    array.forEach((element) => {
+        newArray.push(element + 1);
     });
 
     return newArray;
 }
-const array = [31, 57, 12, 5];
-console.log(addOne(array));
 
-module.exports = addOne;
+const myArray = [31, 57, 12, 5];
+const unchanged = [31, 57, 12, 5];
+const expected = [32, 58, 13, 6];
+const output = addOne(myArray);
+
+assert.strictEqual(typeof addOne, 'function', 'ERRO1');
+assert.deepEqual(output, expected, 'ERRO2');
+assert.deepStrictEqual(myArray, unchanged, 'ERRO3');
