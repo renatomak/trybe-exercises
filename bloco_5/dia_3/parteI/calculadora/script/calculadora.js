@@ -1,6 +1,5 @@
 function squareNumber(number){
-    const expoente = 2;
-    return number * expoente;
+    return number * number;
 }
 
 function halfNumber(number){
@@ -49,6 +48,8 @@ function calcAreaCircle(){
     const inputArea = document.getElementById('area-input').value;
     updateDivSolution(areaOfCircle(inputArea));
 }
+
+module.exports = { squareNumber, halfNumber, percentOf, areaOfCircle }
 
 window.onload = function () {
     document.getElementById('square-button').addEventListener('click', calcSquare);
