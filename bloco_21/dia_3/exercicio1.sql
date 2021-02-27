@@ -23,4 +23,4 @@ BEGIN
 END $$
 DELIMITER ;
 
-INSERT INTO movies(ticket_price, ticket_price_estimation) VALUES(12, 12);
+INSERT INTO movies(ticket_price, ticket_price_estimation) VALUES(13, 13);
