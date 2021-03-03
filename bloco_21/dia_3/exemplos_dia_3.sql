@@ -89,3 +89,46 @@ END &&
 
 DELIMITER ;
 SELECT BuscarQuantidadeFilmesPorCategoria('Action');
+
+-- TRIGGER 1 - Crie um TRIGGER que, a cada nova inserção feita na tabela carros , defina o valor da coluna data_atualizacao para o momento do ocorrido, a acao para 'INSERÇÃO' e a coluna disponivel_em_estoque para 1 .
+USE betrybe_automoveis;
+DROP TRIGGER IF EXISTS trigger_atualiza_acao;
+DELIMITER $$
+CREATE TRIGGER trigger_atualiza_acao
+	BEFORE INSERT ON carros
+    FOR EACH ROW
+BEGIN
+	SET NEW.data_atualizacao = NOW();
+    SET NEW.acao = 'INSERT';
+END $$
+
+DELIMITER ;
+INSERT INTO carros(preco, disponivel_em_estoque) VALUES (10, 1);
+
+-- TRIGGER 2 - Crie um TRIGGER que, a cada atualização feita na tabela carros , defina o valor da coluna data_atualizacao para o momento do ocorrido e a acao para 'ATUALIZAÇÃO' .
+USE betrybe_automoveis;
+DROP TRIGGER IF EXISTS trigger_update;
+DELIMITER $$
+CREATE TRIGGER trigger_update
+	BEFORE UPDATE ON carros
+    FOR EACH ROW
+BEGIN
+	SET NEW.data_atualizacao = NOW();
+    SET NEW.acao = 'UPDATE';
+END $$
+DELIMITER ;
+UPDATE carros SET preco=15 WHERE id_carro=1;
+
+-- TRIGGER 3 - Crie um TRIGGER que, a cada exclusão feita na tabela carros , envie para a tabela log_operacoes as informações do tipo_operacao como 'EXCLUSÃO' e a data_ocorrido como o momento da operação.
+USE betrybe_automoveis;
+DROP TRIGGER IF EXISTS trigger_delete;
+DELIMITER $$
+CREATE TRIGGER trigger_delete
+	AFTER DELETE ON carros
+    FOR EACH ROW
+BEGIN
+	INSERT INTO log_operacoes(tipo_operacao, data_ocorrido)
+    VALUES('EXCLUSÃO', now());
+END $$
+DELIMITER ;
+DELETE FROM carros WHERE id_carro=1;
