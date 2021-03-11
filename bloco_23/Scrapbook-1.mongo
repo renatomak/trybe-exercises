@@ -23,6 +23,7 @@ db.restaurants
 /**3 - Selecione e faça a contagem dos restaurantes que possuem avaliação (campo rating ) maior ou igual a 8 .
  */
 db.restaurants.find({ rating: { $gte: 8 } }, { rating: 1, _id: 0 }).count();
+db.restaurants.count({ rating: { $gte: 8 } }, { rating: 1, _id: 0 });
 
 /**4 - Selecione e faça a contagem dos restaurantes que possuem avaliação menor que 4 .
  */
@@ -102,3 +103,20 @@ db.restaurants.find({
     { "rating": { $lt: 10 } }
   ]
 }, { "rating": 1, _id: 0}).count()
+
+
+/**MÉTODO SORT() */
+db.inventory.find({ qty: { $exists: false } })
+db.inventory.find({ qty: { $exists: true, $nin: [ 5, 25 ] } }).count()
+
+db.example.find().sort({ "price": 1 }).pretty()
+/** 1 - Ordene alfabeticamente os restaurantes pelo nome (campo name ).
+ */
+ db.restaurants.find({}, { name: 1, _id: 0}).sort({ name: 1});
+
+ /** 2 - Ordene os restaurantes de forma descrescente baseado 
+ nas avaliações.
+  */
+  db.restaurants.find({}, { "rating": 1, _id: 0}).sort({ "rating": -1})
+  
+
