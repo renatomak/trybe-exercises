@@ -5,22 +5,70 @@ db.products.find({ price: { $in: [5, 15] } });
 
 db.restaurants.count();
 
-db.restaurants.find()
+db.restaurants.find();
 /**1 - Selecione e faça a contagem dos restaurantes presentes nos bairros (campo borough ) Queens , Staten Island e Bronx . */
-db.restaurants.find({"borough": { $in: ['Queens', 'Staten', 'Island', 'Bronx']}}, { "borough": 1, _id: 0}).count()
+db.restaurants
+  .find(
+    { borough: { $in: ["Queens", "Staten", "Island", "Bronx"] } },
+    { borough: 1, _id: 0 }
+  )
+  .count();
 
 /** 2 - Selecione e faça a contagem dos restaurantes que não possuem culinária (campo cuisine ) do tipo American .
  */
 db.restaurants
-.find({"cuisine": { $ne: 'American'}}, { "cuisine": 1, _id: 0}).count()
+  .find({ cuisine: { $ne: "American" } }, { cuisine: 1, _id: 0 })
+  .count();
 
 /**3 - Selecione e faça a contagem dos restaurantes que possuem avaliação (campo rating ) maior ou igual a 8 .
  */
- db.restaurants.find({"rating": { $gte: 8 } }, { "rating": 1, _id: 0}).count()
+db.restaurants.find({ rating: { $gte: 8 } }, { rating: 1, _id: 0 }).count();
 
- /**4 - Selecione e faça a contagem dos restaurantes que possuem avaliação menor que 4 .
-  */
-  db.restaurants.find({"rating": { $lt: 4}}).count()
+/**4 - Selecione e faça a contagem dos restaurantes que possuem avaliação menor que 4 .
+ */
+db.restaurants.find({ rating: { $lt: 4 } }).count();
 
-  /**5 - Selecione e faça a contagem dos restaurantes que não possuem as avaliações 5 , 6 e 7 . */
-    db.restaurants.find({"rating": { $nin: [5, 6, 7]}}).count()
+/**5 - Selecione e faça a contagem dos restaurantes que não possuem as avaliações 5 , 6 e 7 . */
+db.restaurants.find({ rating: { $nin: [5, 6, 7] } }).count();
+
+/**OPERAORES LÓGICOS */
+db.products.find();
+db.products.find({ price: { $not: { $gt: 20 } } }).count();
+db.products.find({ price: { $lte: 20 } }).count();
+
+/**5- Selecione e faça a contagem dos restaurantes que não possuem 
+    avaliação menor ou igual a 5 , essa query também deve retornar restaurantes 
+    que não possuem o campo avaliação.
+     db.inventory.find({ price: { $not: { $gt: 1.99 } } })
+     */
+db.restaurants
+  .find({ rating: { $not: { $gt: 5 } } }, { rating: 1, _id: 0 })
+  .count();
+
+/**1 - Selecione e faça a contagem dos restaurantes que não possuem avaliação 
+menor ou igual a 5 , essa query também deve retornar restaurantes que não 
+possuem o campo avaliação. */
+db.restaurants
+.find({"rating": { $not: { $gt: 5 } } }, {"rating": 1, _id: 0}).count()
+
+/** 2 - Selecione e faça a contagem dos restaurante em que a avaliação seja maior 
+ou igual a 6 , ou restaurantes localizados no bairro Brooklyn .
+a >= 6 or l = Brooklyn
+ */
+db.restaurants
+.find({ $or: [{"rating": {$gte: 6}}, {"borough": "Brooklyn" }]}).count()
+
+/** 3 - Selecione e faça a contagem dos restaurantes localizados nos bairros 
+Queens, Staten Island e Broklyn e possuem avaliação maior que 4 .
+ */
+ db.restaurants.find({})
+ db.restaurants
+ .find({ $and: [ { "borough": { $eq: "Queens"} }] }, { "borough": 1, _id: 0 } );
+
+  db.restaurants
+ .find({ $and: [ { "borough": { $eq: "Broklyn"} }] }, { "borough": 1, _id: 0 } );
+ 
+/*  , "Staten Island ", "Broklyn"] } }, { "borough": 1, _id: 0 } ) */
+db.restaurants.find({ "borough": { $in: ["Queens", "Brooklyn", "Staten Island"]}}, { "borough": 1, _id: 0 } )
+
+db.restaurants.find({ $and: [{ "borough": { $in: ["Queens", "Staten Island", "Broklyn"]}}, { "rating": { $eq: 4} }] }).count()
