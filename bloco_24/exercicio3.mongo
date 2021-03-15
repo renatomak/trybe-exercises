@@ -1,5 +1,5 @@
 db.movies.find();
 db.movies.updateOne(
   { title: "Batman"},
-  { $pop: { category: -1 }}
+  { $pull: { category: { $in: ["action"]}}}
 )
