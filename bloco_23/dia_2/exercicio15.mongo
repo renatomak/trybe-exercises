@@ -1,0 +1,10 @@
+db.superheroes.find({
+  $and: [
+    { "aspects.weight": { $gte: 80}},
+    { "aspects.weight": { $lte: 100}},
+    { "publisher": { $ne: "DC Comics"}},
+    { $or: [{ "race": { $eq: "Human"}},
+    { "race": { $eq: "Mutant"}}
+    ]}
+  ]
+});

@@ -1,0 +1,2 @@
+db.superheroes.find(
+  { "aspects.height": { $not: { $gte: 180 } } });
