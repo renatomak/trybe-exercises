@@ -1,0 +1,4 @@
+/** Exercício 4: Retorne o total de super-heróis com até 1.80m.
+ */
+ db.superheroes.find()
+ db.superheroes.count({"aspects.height": { $lte: 180 }}, {"aspects.height": 1, _id: 0 })
