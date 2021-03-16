@@ -1,0 +1,18 @@
+db.movies.updateOne(
+  { "title": "Batman", "cast.character": "Batman" },
+  { $push: {
+    "cast.$.actor": 
+      { $each: ["Michael Keaton" , "Val Kilmer", "George Clooney"], 
+        $sort: 1
+       }
+    }
+  },
+  { upsert: true }
+)
+
+db.movies.updateOne(
+  { "title": "Batman" },
+  { $pop: {"cast.0.actor": 1 }}
+)
+
+// ["Michael Keaton" , "Val Kilmer", "George Clooney"]
