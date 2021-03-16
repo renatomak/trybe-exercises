@@ -1,0 +1,7 @@
+db.movies.updateOne(
+  { title: "Home Alone"},
+  { $addToSet: {
+    ratings: [200, 99, 65]
+  }},
+  { upsert: true }
+)
