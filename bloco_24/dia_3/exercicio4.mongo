@@ -2,7 +2,9 @@ db.movies.updateOne(
   { title: "Godzilla"},
   {
     $push: {
-      ratings: [78, 52, 95, 102] 
+      ratings: {
+        $each: [78, 52, 95, 102] 
+      } 
     }
   }, 
   { upsert: true }
