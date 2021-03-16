@@ -3,4 +3,4 @@ db.movies.createIndex({ description: "text"})
 db.movies.find({
   "description": { $regex: /^The/} } ).pretty();
 
-db.movies.find({ $text: { $search: "his" } })
+db.movies.find({ $text: { $search: "eight" } })
