@@ -1,1 +1,1 @@
-db.movies.find({ $text: { $search: "monstrous criminal"}})
+db.movies.find({ $text: { $search: "vacation"}})
