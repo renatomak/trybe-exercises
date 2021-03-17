@@ -1,0 +1,7 @@
+db.movies.find({
+  $and: [
+    { "category": "action" },
+    { imdbRating: { $gt: 7 }}
+  ]
+  
+})
