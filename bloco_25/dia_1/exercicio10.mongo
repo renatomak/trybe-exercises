@@ -16,3 +16,24 @@ db.vendas.aggregate([
     $count: "clientes"
   }
 ])
+db.vendas.aggregate([
+  {
+    "$group": {
+      _id: "$clienteId",
+      qtd: {
+        $sum: 1
+      }
+    }
+  },
+  {
+    "$match": {
+      qtd: { $gt: 5 }
+    }
+  },
+  {
+    $group: {
+      _id: null,
+      clientes: { $sum: 1 }
+    }
+  }
+])
