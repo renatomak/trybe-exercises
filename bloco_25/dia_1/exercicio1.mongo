@@ -1,0 +1,6 @@
+db.clientes.find();
+db.produtos.count();
+db.vendas.count();
+db.clientes.aggregate([
+  { "$match": { "sexo": "MASCULINO" }}
+])

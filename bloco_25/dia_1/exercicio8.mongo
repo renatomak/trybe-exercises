@@ -1,0 +1,84 @@
+db.clientes.find();
+db.clientes.aggregate([
+  {
+    "$lookup": {
+      from: "vendas",
+      localField: "clienteId",
+      foreignField: "clienteId",
+      as: "clienteCompras"
+    }
+  },{
+    "$project": {
+      _id: 0,
+      nome: 0,
+      "dataNascimento" : 0,
+      sexo: 0,
+      endereco: 0,
+      "clienteCompras._id":0,
+      "clienteCompras.dataVenda": 0,
+      "clienteCompras.status": 0
+    }
+  },
+  { 
+    "$limit": 1
+  }
+]).pretty()
+db.vendas.aggregate([
+  {
+    "$group": {
+      _id: { cliente: "$clienteId",
+      total: { $round: ["$valorTotal"]}}
+    }
+  },
+  {
+    $sort: { "_id.total": -1}
+  },
+  {
+    "$limit": 5
+  },
+  {
+    "$lookup": {
+      from: "clientes",
+      localField: "_id.cliente",
+      foreignField: "clienteId",
+      as: "clientesComMaiorcGasto"
+    }
+  },
+  {
+    "$project": {
+      "clientesComMaiorcGasto.nome": 1
+    }
+  }
+])
+
+db.vendas.aggregate([
+  {
+    $group: {
+      _id: "$clienteId",
+      total: { $sum: "$valorTotal"}
+    }
+  },
+  {
+    $sort: { total: -1 }
+  }, 
+  {
+    "$limit": 5
+  }
+])
+
+db.vendas.aggregate([
+  {
+    $group: {
+      _id: "$clienteId",
+      total: {
+        $sum: "$valorTotal"
+      }
+    }
+  },
+  {
+    $sort: { total: -1}
+  },
+  {
+    $limit: 5
+  }
+])
