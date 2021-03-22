@@ -1,0 +1,20 @@
+db.clientes.findOne();
+
+db.clientes
+  .aggregate([
+    {
+      $addFields: {
+        idade: {
+          $floor: {
+            $divide: [
+              {
+                $subtract: ["$$NOW", "$dataNascimento"],
+              },
+              31536000000
+            ]
+          },
+        },
+      },
+    }
+  ])
+  .pretty();
