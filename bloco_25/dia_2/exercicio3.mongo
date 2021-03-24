@@ -1,0 +1,26 @@
+db.clientes
+  .aggregate([
+    {
+      $addFields: {
+        idade: {
+          $floor: {
+            $divide: [
+              {
+                $subtract: ["$$NOW", "$dataNascimento"],
+              },
+              31536000000
+            ]
+          },
+        },
+      },
+    },
+    {
+      "$lookup": {
+        from: "vendas",
+        localField: "clienteId",
+        foreignField: "clienteId",
+        as: "compras"
+      }
+    }
+  ])
+  .pretty();

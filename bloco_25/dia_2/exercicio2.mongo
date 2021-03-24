@@ -1,0 +1,35 @@
+db.clientes
+  .aggregate([
+    {
+      $addFields: {
+        idade: {
+          $floor: {
+            $divide: [
+              {
+                $subtract: ["$$NOW", "$dataNascimento"],
+              },
+              31536000000
+            ]
+          },
+        },
+      },
+    },
+    {
+      "$match": {
+        idade: {
+          $gte: 18,
+          $lte: 25
+        }
+      }
+    },
+    {
+      $count: "TotalClientes"
+    }
+    /* {
+      $group: {
+        "_id": null,
+        total: { $sum: 1 }
+      }
+    } */
+  ])
+  .pretty();
