@@ -1,29 +1,33 @@
-/* const ImcCalc = require('fasam-imc-calc');
-const imc = new ImcCalc(85, 1.7);
-console.log(imc.calc()) */
+const imc = require('./imc');
+const bhaskara = require('./bhaskara');
+const jogo = require('./sorteio');
+const velocidadeMedia = require('./velocidade');
+const readLine = require('readline-sync');
 
-const readline = require('readline-sync');
+const executar = () => {
+  const escolha = readLine.questionInt(`
+  Faça sua escolha entre as funcionalidades disponiveis: 
+  1 - IMC;
+  2 - Bhaskara;
+  3 - Jogo- Acrete o número aleatório;
+  4 - Velociade Média.`)
 
-function calcularBhaskara() {
-  console.log("Fazendo o cálculo de Bháskara")
-  const a = readline.questionInt("Digite o valor de A: ");
-  const b = readline.questionInt("Digite o valor de B: ");
-  const c = readline.questionInt("Digite o valor de C: ");
-  console.log("Coeficientes: A: ", a, " B: ", b, "C: ", c); 
-  const delta = calcularDelta(a, b, c)
-
-  if( delta < 0 ){
-    console.log("Delta menor que 0 (zero)");
-    return;
+  switch(escolha) {
+    case 1:
+      imc();
+      break;
+    case 2:
+      bhaskara();
+      break;
+    case 3:
+      jogo();
+      break;
+    case 4:
+      velocidadeMedia();
+      break;
+    default:
+      console.log("Escolha invalida")
   }
-  
-  console.log("Delta: ", delta)
 }
 
-function calcularDelta(a, b, c) {
-  return (b*b) -(4*a*c)
-}
-
-
-
-calcularBhaskara()
+executar();

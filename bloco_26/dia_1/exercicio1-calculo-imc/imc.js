@@ -2,10 +2,9 @@ const readline = require('readline-sync');
 
 
 function imc() {
-  console.log("Fazendo o cálculo de Bháskara")
+  console.log("CALCÚLO DO IMC\n")
   const altura = readline.questionInt("Digite sua altura: ");
   const peso = readline.questionFloat("Digite sua peso: ");
-  console.log(altura, peso)
   const value = calculoIMC(altura, peso);
   console.log("Seu IMC é: ", value);
 
@@ -30,4 +29,4 @@ function calculoIMC(altura, peso) {
   return (peso/(altura*altura))
 }
 
-imc();
+module.exports = imc;
