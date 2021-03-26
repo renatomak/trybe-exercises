@@ -1,0 +1,19 @@
+{
+  "name": "exercicio1-calculo-imc",
+  "version": "1.0.0",
+  "description": "Primeiro exercicio do bloco de nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "imc": "node imc",
+    "velocidade": "node velocidade",
+    "sorteio": "node sorteio",
+    "start": "node index.js"
+  },
+  "author": "Renato Marques",
+  "license": "ISC",
+  "dependencies": {
+    "fasam-imc-calc": "0.0.4",
+    "readline-sync": "^1.4.10"
+  }
+}
