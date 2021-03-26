@@ -14,6 +14,8 @@ function exercicioUm(a, b, c) {
   return promise;
 }
 
-exercicioUm(3, 3, 10)
+/* exercicioUm(3, 3, 10)
   .then((result) => console.log(result))
-  .catch((err) => console.log(err.message))
+  .catch((err) => console.log(err.message)) */
+
+module.exports = exercicioUm;
