@@ -9,3 +9,4 @@ const c = aleatorio();
 exercicioUm(a, b, c)
   .then((result) => console.log(result))
   .catch((err) => console.log(err.message))
+  
