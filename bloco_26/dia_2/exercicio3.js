@@ -7,7 +7,7 @@ const executaAleatorio = async () => {
   const b = aleatorio();
   const c = aleatorio();
 
-  const resultado = await exercicioUm(a, b, c);
+  const resultado = await exercicioUm("a", b, c);
 
   return resultado;
 };
