@@ -31,7 +31,7 @@ app.get('/simpsons/:id', rescue(async (req, res) => {
     throw new Error("Erro o ler o arquivo!")
   }
 }))
-
+// middleware de validação do id
 const checkIdMiddleware = async (req, res, next) => {
   const { id } = req.body;
   const data = await fs.promises.readFile("./simpsons.json", "utf-8")
