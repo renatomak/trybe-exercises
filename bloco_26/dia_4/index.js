@@ -1,5 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
+const fs = require('fs');
+const rescue = require('express-rescue');
 
 const app = express();
 const PORT = 3000;
@@ -9,6 +11,15 @@ app.use(bodyParser.json());
 app.get('/ping', (req, res) => {
   res.send('Pong!')
 })
+
+app.get('/simpsons', rescue(async (req, res) => {
+  try {
+    const data = await fs.promises.readFile("./simpsons.json", "utf-8")
+    return res.status(200).send(data)
+  } catch (error) {
+    throw new Error("Erro o ler o arquivo!")
+  }
+}))
 
 /* app.post('/hello', (req, res) => {
   const { name } = req.body;
