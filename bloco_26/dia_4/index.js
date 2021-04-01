@@ -21,6 +21,17 @@ app.get('/simpsons', rescue(async (req, res) => {
   }
 }))
 
+app.get('/simpsons/:id', rescue(async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await fs.promises.readFile("./simpsons.json", "utf-8")
+    const simpsonId = JSON.parse(data).find((item) => item.id == id)
+    return res.status(200).send(JSON.stringify(simpsonId))
+  } catch (error) {
+    throw new Error("Erro o ler o arquivo!")
+  }
+}))
+
 /* app.post('/hello', (req, res) => {
   const { name } = req.body;
   res.send({"message": `Hello, ${name}!`})
