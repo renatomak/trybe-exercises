@@ -25,8 +25,33 @@ app.get('/simpsons/:id', rescue(async (req, res) => {
   try {
     const { id } = req.params;
     const data = await fs.promises.readFile("./simpsons.json", "utf-8")
-    const simpsonId = JSON.parse(data).find((item) => item.id == id)
+    const simpsonId = JSON.parse(data).find((item) => item.id == id) || []
     return res.status(200).send(JSON.stringify(simpsonId))
+  } catch (error) {
+    throw new Error("Erro o ler o arquivo!")
+  }
+}))
+
+const checkIdMiddleware = async (req, res, next) => {
+  const { id } = req.body;
+  const data = await fs.promises.readFile("./simpsons.json", "utf-8")
+  const simpsons = JSON.parse(data);
+  const haveId = simpsons.findIndex((item) => item.id == id)
+
+  if(haveId != -1) {
+    return res.status(400).send('Id ja cadastrado!')
+  }
+  next();
+}
+
+app.post('/simpsons', checkIdMiddleware, rescue(async (req, res) => {
+  try {
+    const { id, name } = req.body;
+    const data = await fs.promises.readFile("./simpsons.json", "utf-8")
+    const simpsons = JSON.parse(data);
+    simpsons.push({ id, name });
+    console.log(simpsons)
+    return res.status(200).send("Cadastro realizado com sucesso!")
   } catch (error) {
     throw new Error("Erro o ler o arquivo!")
   }
