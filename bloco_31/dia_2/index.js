@@ -1,5 +1,4 @@
 const express = require("express");
-const { Book } = require("./models");
 const router = require('./routers/BooksRouters')
 
 const app = express();

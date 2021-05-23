@@ -2,7 +2,12 @@ const { Book } = require("../models");
 
 const getAllBooks = async (req, res) => {
   try {
-    const books = await Book.findAll();
+    const books = await Book.findAll({
+      order: [
+        ['title', 'ASC'],
+        ['createdAt', 'DESC']
+      ]
+    });
     res.status(200).json(books);
   } catch (error) {
     console.error(error.message);
@@ -16,6 +21,18 @@ const getById = async (req, res) => {
     const book = await Book.findByPk(id);
     
     res.status(200).json(book);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ message: error.message });
+  }
+}
+
+const getByName = async (req, res) => {
+  try {
+    const { name } = req.body;
+
+    const bookForAuthor = await Book.findOne({ where: { author: name }});
+    res.status(200).json(bookForAuthor);
   } catch (error) {
     console.error(error.message);
     res.status(500).json({ message: error.message });
@@ -66,6 +83,7 @@ const deleteBook = async (req, res) => {
 module.exports = {
   getAllBooks,
   getById,
+  getByName,
   createBook,
   updateBook,
   deleteBook,
