@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/code,libreoffice
 # Edit at https://www.toptal.com/developers/gitignore?templates=code,libreoffice
-
+*node_modules
 ### Code ###
 .vscode/*
 !.vscode/settings.json
@@ -17,3 +17,4 @@
 bloco_26/dia_3/arquivo1.txt
 bloco_26/dia_3/arquivo2.txt
 bloco_28/dia_1/node_modules
+bloco_28/dia_1/node_modules/@hapi/hoek/lib/clone.js
