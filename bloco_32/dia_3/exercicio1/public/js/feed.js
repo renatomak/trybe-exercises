@@ -1,0 +1,2 @@
+const client = window.io();
+
