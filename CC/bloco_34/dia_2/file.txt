@@ -1,0 +1,6 @@
+Macado
+cobra
+passaro
+baleia
+cavalo
+galinha
