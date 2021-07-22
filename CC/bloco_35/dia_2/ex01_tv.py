@@ -21,3 +21,7 @@ class TV:
 
     def ligar_desligar(self):
         self.ligada = True if self.ligada else False
+
+
+if __name__ == '__main__':
+    tv = TV(50, True)
