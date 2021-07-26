@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 import gzip
 import json
 from zipfile import ZipFile
-import csv
 
 
 class Serializer(ABC):
@@ -68,21 +67,13 @@ class SalesReportJSON(SalesReport):
     FILE_EXTENSION = '.json'
 
     def serialize(self):
-        with open(self.export_file + '.json', 'w') as file:
+        with open(self.get_export_file_name(), 'w') as file:
             json.dump(self.build(), file)
 
 
 class SalesReportCSV(SalesReport):
-    def serialize(self):
-        with open(self.export_file + '.csv', 'w') as file:
-            headers = ["Coluna 1", "Coluna 2", "Coluna 3"]
-            writer = csv.DictWriter(file, headers)
-            writer.writeheader()
-            for item in self.build():
-                writer.writerow(item)
-
-    def get_length(self):
-        return len(self.build())
+    # Sua implementação vai aqui
+    pass
 
 
 # Para testar
