@@ -16,7 +16,6 @@ def binary_search_iterative(array, element):
 
         if element == array[mid]:
             return mid
-
         if element < array[mid]:
             end = mid - 1
         else:
