@@ -8,6 +8,9 @@ sem instabilidades. """
 #  - OK
 #  - Instabilidades
 
+from typing import SupportsRound
+
+
 valores_coletados = [0, 1, 1, 1, 0, 0, 1, 1]
 # resultado = 3
 
@@ -27,7 +30,9 @@ def max_stable_server_time(array):
     if (count != 0):
         count_sequence.append(count)
 
-    return max(count_sequence)
+    if len(count_sequence) > 0:
+        return max(count_sequence)
+    return 0
 
 
 print(max_stable_server_time(valores_coletados))
