@@ -15,4 +15,4 @@ def count(nums):
             count[num] += 1
         if count[num] > most_frequent:
             most_frequent = count[num]
-    return count
+    return most_frequent
